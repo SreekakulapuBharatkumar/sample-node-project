@@ -11,10 +11,13 @@ pipeline {
         }
         stage('sonar analysis') {
             agent { label 'Build' }
+            environment {
+                scannerHome = tool "sonarscanner"
+            }
             steps {
                 // performing sonarqube analysis with "withSonarQubeENV(<Name of Server configured in Jenkins>)"
                 withSonarQubeEnv('SONAR_CLOUD') {
-                    sh 'sonar-scanner -Dsonar.login=9deedc0e512251ebbcb6b8a5da2264588facf228 -Dsonar.organization=sample-1 -Dsonar.projectKey=sample-1_bharat'
+                    sh '/usr/local/bin/sonar-scanner'
                 }
             }
         }
