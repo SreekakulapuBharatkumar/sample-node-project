@@ -8,8 +8,6 @@ pipeline {
                 git url: 'https://github.com/SreekakulapuBharatkumar/sample-node-project.git'
                     branch: 'master'                
             }
-            git url:'https://github.com/SreekakulapuBharatkumar/sample-node-project.git'
-                branch:'master'
         }
         stage('sonar analysis') {
             agent { label 'Build' }
