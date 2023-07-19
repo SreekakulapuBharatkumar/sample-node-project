@@ -3,7 +3,7 @@ pipeline {
     triggers { pollSCM('* * * * *') }
     stages {
         stage('vcs') {
-            agent {label 'Build'}
+            agent { label 'Build' }
             steps {
                 git url: 'https://github.com/SreekakulapuBharatkumar/sample-node-project.git'
                     branch: 'master'                
@@ -12,7 +12,7 @@ pipeline {
                 branch:'master'
         }
         stage('sonar analysis') {
-            agent {label 'Build'}
+            agent { label 'Build' }
             steps {
                 withSonarQubeEnv('SONAR_CLOUD') {
                     sh 'sonar-scanner'
