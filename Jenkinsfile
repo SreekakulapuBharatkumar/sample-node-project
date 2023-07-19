@@ -12,6 +12,7 @@ pipeline {
             steps {
                 withSonarQubeEnv('SONAR_CLOUD') {
                     sh 'sonar-scanner'
+                }
             }
         }
     }
