@@ -4,6 +4,10 @@ pipeline {
     stages {
         stage('vcs') {
             agent {label 'Build'}
+            steps {
+                git url:'https://github.com/SreekakulapuBharatkumar/sample-node-project.git'
+                    branch:'master'                
+            }
             git url:'https://github.com/SreekakulapuBharatkumar/sample-node-project.git'
                 branch:'master'
         }
