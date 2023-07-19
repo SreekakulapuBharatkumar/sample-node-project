@@ -17,7 +17,7 @@ pipeline {
             steps {
                 // performing sonarqube analysis with "withSonarQubeENV(<Name of Server configured in Jenkins>)"
                 withSonarQubeEnv('SONAR_CLOUD') {
-                    sh '/usr/local/bin/sonar-scanner'
+                    sh '${scannerHome}/bin/sonar-scanner'
                 }
             }
         }
